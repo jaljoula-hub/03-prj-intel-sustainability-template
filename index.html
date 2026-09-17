@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel Sustainability Timeline</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -21,6 +23,9 @@
         <a href="#future">Future</a>
       </nav>
 
+      <button class="rtl-toggle" id="rtlToggle" type="button" aria-label="Toggle RTL layout" aria-pressed="false">
+        RTL: Off
+      </button>
       <a href="#timeline" class="nav-button">Explore Timeline</a>
     </div>
   </header>
@@ -29,6 +34,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="eyebrow">A CLEANER. BRIGHTER. BOLDER TOMORROW.</p>
+      <div class="hero-badge">Technology • Climate Action • Innovation</div>
       <h1>Intel's <span>Sustainability</span> Timeline</h1>
       <p class="hero-text">
         Explore Intel's journey through time, discovering how our commitment
@@ -146,8 +152,49 @@
           <span class="year">2024</span>
           <h3>Sustainability Summit</h3>
           <p class="extra-details">Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.</p>
+          <button class="timeline-modal-trigger" type="button" data-bs-toggle="modal" data-bs-target="#sustainabilitySummitModal" aria-controls="sustainabilitySummitModal">
+            Learn more
+          </button>
         </div>
       </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="intel-feature-section" aria-labelledby="intel-feature-heading">
+    <div class="container feature-container">
+      <div class="feature-header text-center">
+        <p class="eyebrow blue">WHAT WE'RE BUILDING</p>
+        <h2 id="intel-feature-heading">Three Focus Areas for a Cleaner Future</h2>
+      </div>
+
+      <div class="row g-4 feature-row">
+        <div class="col-12 col-md-4">
+          <article class="feature-card">
+            <div class="feature-icon-wrap" aria-hidden="true">🌱</div>
+            <h3>Responsible Manufacturing</h3>
+            <p>Reducing waste, improving energy efficiency, and advancing cleaner production methods across our operations.</p>
+            <a href="#timeline" class="feature-button">Learn more</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card">
+            <div class="feature-icon-wrap" aria-hidden="true">💧</div>
+            <h3>Water Stewardship</h3>
+            <p>Protecting critical water resources through smarter use, recovery programs, and long-term environmental care.</p>
+            <a href="#impact" class="feature-button">Learn more</a>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <article class="feature-card">
+            <div class="feature-icon-wrap" aria-hidden="true">⚡</div>
+            <h3>Smarter Innovation</h3>
+            <p>Using advanced technology to deliver sustainable performance and enable cleaner digital experiences worldwide.</p>
+            <a href="#future" class="feature-button">Learn more</a>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -180,20 +227,182 @@
     </div>
   </section>
 
-  <footer>
-    <div class="footer-container">
-      <div>
+  <section class="newsletter-section" aria-labelledby="newsletter-heading">
+    <div class="container newsletter-container">
+      <div class="newsletter-copy">
+        <p class="eyebrow blue">STAY INFORMED</p>
+        <h2 id="newsletter-heading">Join the sustainability newsletter</h2>
+        <p>Get the latest updates on technology, climate action, and Intel's progress toward a more sustainable future.</p>
+        <div class="newsletter-status" aria-label="Connected sustainable future ready">
+          <span class="status-nodes" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Connected Sustainable Future Ready</span>
+        </div>
+      </div>
+
+      <form class="newsletter-form row g-2 align-items-center" aria-label="Newsletter subscription form">
+        <div class="col-12 col-md-8">
+          <label for="newsletter-email" class="visually-hidden">Email address</label>
+          <input class="form-control form-control-lg" id="newsletter-email" type="email" name="email" placeholder="Enter your email address" aria-label="Email address" required />
+        </div>
+        <div class="col-12 col-md-4">
+          <button class="btn btn-primary newsletter-button w-100" type="submit">Subscribe</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
         <img src="img/intel-header-logo.svg" alt="Intel logo" class="footer-logo" />
         <p>Technology for a more sustainable world.</p>
       </div>
-      <div class="footer-links">
+      <nav class="footer-links" aria-label="Footer navigation">
         <a href="#story">About Intel</a>
         <a href="#timeline">Sustainability</a>
         <a href="#impact">Innovation</a>
         <a href="#future">Future</a>
+      </nav>
+      <div class="footer-meta">
+        <p>© 2026 Intel Corporation</p>
+        <p>Student educational project</p>
       </div>
     </div>
-    <p class="copyright">© 2026 Intel Corporation. Student educational project.</p>
   </footer>
+
+  <div class="modal fade" id="sustainabilitySummitModal" tabindex="-1" aria-labelledby="sustainabilitySummitModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content timeline-modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="sustainabilitySummitModalLabel">Sustainability Summit</h2>
+          <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.</p>
+          <p>Working together across the semiconductor ecosystem helps turn sustainability goals into practical progress.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const html = document.documentElement;
+    const toggleButton = document.getElementById('rtlToggle');
+    const rtlLanguageCodes = new Set(['ar']);
+    const translations = {
+      'Intel Sustainability Timeline': 'الجدول الزمني لاستدامة إنتل', 'Intel logo': 'شعار إنتل',
+      'Main navigation': 'التنقل الرئيسي', 'Footer navigation': 'تنقل التذييل', 'Newsletter subscription form': 'نموذج الاشتراك في النشرة الإخبارية',
+      'Intel founded in 1968': 'تأسيس إنتل عام 1968', 'The first Intel microprocessor in 1971': 'أول معالج دقيق من إنتل عام 1971',
+      '8086 processor launched in 1978': 'إطلاق معالج 8086 عام 1978', '386 processor introduced in 1985': 'طرح معالج 386 عام 1985',
+      'GHG emissions milestone in 2006': 'محطة انبعاثات غازات الاحتباس الحراري عام 2006', 'Intel RISE strategy announced in 2020': 'الإعلان عن استراتيجية RISE من إنتل عام 2020',
+      'Net-zero commitment announced in 2022': 'الإعلان عن الالتزام بصافي انبعاثات صفري عام 2022', 'Renewable electricity milestone in 2023': 'محطة الكهرباء المتجددة عام 2023',
+      'Sustainability Summit in 2024': 'قمة الاستدامة عام 2024', 'Technology supporting a sustainable future': 'تكنولوجيا تدعم مستقبلًا مستدامًا',
+      'Close': 'إغلاق', 'Working together across the semiconductor ecosystem helps turn sustainability goals into practical progress.': 'يساعد التعاون عبر منظومة أشباه الموصلات على تحويل أهداف الاستدامة إلى تقدم عملي.',
+      'Our Story': 'قصتنا', 'Sustainability': 'الاستدامة', 'Innovation': 'الابتكار', 'Future': 'المستقبل',
+      'Toggle RTL layout': 'تبديل اتجاه الكتابة من اليمين إلى اليسار', 'RTL: On': 'الاتجاه من اليمين إلى اليسار: مفعّل',
+      'Explore Timeline': 'استكشف الجدول الزمني', 'A CLEANER. BRIGHTER. BOLDER TOMORROW.': 'غدٌ أنظف وأكثر إشراقًا وطموحًا.',
+      'Technology • Climate Action • Innovation': 'التكنولوجيا • العمل المناخي • الابتكار', 'Intel\'s': 'إنتل',
+      'Sustainability Timeline': 'الجدول الزمني للاستدامة',
+      "Explore Intel's journey through time, discovering how our commitment to innovation has shaped a more sustainable future for technology and our planet.": 'استكشف رحلة إنتل عبر الزمن، واكتشف كيف ساهم التزامنا بالابتكار في تشكيل مستقبل أكثر استدامة للتقنية وكوكبنا.',
+      'Explore the Journey': 'استكشف الرحلة', 'OUR JOURNEY': 'رحلتنا',
+      'Milestones for a More Sustainable Future': 'محطات نحو مستقبل أكثر استدامة',
+      "Explore key moments in Intel's sustainability journey and see how innovation today can help create a better tomorrow.": 'استكشف اللحظات المهمة في رحلة إنتل نحو الاستدامة، واكتشف كيف يمكن لابتكار اليوم أن يصنع غدًا أفضل.',
+      'Intel Founded': 'تأسيس إنتل',
+      'Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.': 'أعاد روبرت نويس وغوردون مور تسمية الشركة حديثة التأسيس NM Electronics لتصبح Intel Corporation، ووضعا بذلك أساس عقود من الابتكار التكنولوجي.',
+      'First Microprocessor': 'أول معالج دقيق',
+      "Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.": 'تكشف إنتل عن 4004، أول معالج دقيق تجاري في العالم، فتشعل ثورة المعالجات الدقيقة وتمهد الطريق لمستقبل أجهزة الحوسبة.',
+      '8086 Processor': 'معالج 8086', 'Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.': 'إطلاق معالج 8086، الذي أرسى بنية x86 التي تشغّل عددًا لا يحصى من الحواسيب والخوادم في العصر الحديث.',
+      '386 Processor': 'معالج 386', 'Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.': 'تقدم إنتل معالج 386 ببنية 32 بت، فتدشن عصرًا جديدًا من الأداء وتعدد المهام في الحواسيب الشخصية.',
+      'Peak GHG Emissions': 'ذروة انبعاثات غازات الاحتباس الحراري',
+      "This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.": 'سجل هذا العام أعلى مستوى سنوي لانبعاثات غازات الاحتباس الحراري الناتجة عن عمليات إنتل. وفي السنوات التالية، استثمرت إنتل بكثافة في الحد من الانبعاثات الكيميائية والطاقة المتجددة والتصنيع الموفر للطاقة لعكس هذا الاتجاه.',
+      'RISE Strategy': 'استراتيجية RISE', 'Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.': 'تطلق إنتل استراتيجية RISE (المسؤولة والشاملة والمستدامة والتمكينية) وأهدافها لعام 2030، بهدف دفع التقدم على مستوى القطاع في العمل المناخي والإشراف على المياه وتقليل النفايات.',
+      'Net-Zero By 2040': 'صافي انبعاثات صفري بحلول 2040', 'Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.': 'تعلن إنتل التزامها بتحقيق صافي انبعاثات صفري من غازات الاحتباس الحراري، ضمن النطاقين 1 و2، في جميع عملياتها العالمية بحلول عام 2040، مواصلةً جهودًا بيئية امتدت لسنوات.',
+      'Renewable Electricity': 'الكهرباء المتجددة', "The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.": 'تصل الشركة إلى استخدام الكهرباء المتجددة بنسبة 99% حول العالم، مما يسهم في خفض انبعاثات الكربون بدرجة كبيرة ويدعم تقدم إنتل نحو أهدافها بعيدة المدى في الاستدامة.',
+      'Sustainability Summit': 'قمة الاستدامة', 'Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.': 'تستضيف إنتل أول قمة للاستدامة، وتجمع الموردين والمسؤولين الحكوميين وقادة القطاع للتعاون في تطوير تصنيع مستدام لأشباه الموصلات من الجيل التالي.',
+      "WHAT WE'RE BUILDING": 'ما نعمل على بنائه', 'Three Focus Areas for a Cleaner Future': 'ثلاثة مجالات تركيز لمستقبل أنظف', 'Responsible Manufacturing': 'تصنيع مسؤول',
+      'Reducing waste, improving energy efficiency, and advancing cleaner production methods across our operations.': 'نقلل النفايات، ونحسن كفاءة الطاقة، ونطور أساليب إنتاج أنظف في جميع عملياتنا.', 'Water Stewardship': 'الإشراف على الموارد المائية',
+      'Protecting critical water resources through smarter use, recovery programs, and long-term environmental care.': 'نحمي موارد المياه الحيوية من خلال الاستخدام الرشيد وبرامج استعادة المياه والرعاية البيئية طويلة الأمد.', 'Smarter Innovation': 'ابتكار أكثر ذكاءً',
+      'Using advanced technology to deliver sustainable performance and enable cleaner digital experiences worldwide.': 'نستخدم التكنولوجيا المتقدمة لتقديم أداء مستدام وتمكين تجارب رقمية أنظف حول العالم.', 'Learn more': 'اعرف المزيد',
+      'REAL PROGRESS. LASTING IMPACT.': 'تقدم حقيقي. أثر مستدام.', 'A More Sustainable World in Numbers': 'عالم أكثر استدامة بالأرقام', 'Renewable electricity usage worldwide': 'استخدام الكهرباء المتجددة حول العالم',
+      'Water': 'المياه', 'Stewardship and restoration initiatives': 'مبادرات الإشراف على الموارد المائية واستعادتها', 'Responsible and sustainable progress': 'تقدم مسؤول ومستدام', 'Target for net-zero global operations': 'الموعد المستهدف لتحقيق صافي انبعاثات صفري في العمليات العالمية',
+      'Innovation Today.': 'ابتكار اليوم.', 'A Healthier Tomorrow.': 'غد أكثر صحة.', "BE PART OF WHAT'S NEXT": 'كن جزءًا من المستقبل', 'Together for a More Sustainable Future': 'معًا نحو مستقبل أكثر استدامة',
+      'Sustainability is not only a goal. It is a shared journey. Through technology, collaboration, responsible manufacturing, and continuous innovation, Intel is working toward a cleaner future.': 'الاستدامة ليست هدفًا فحسب، بل رحلة مشتركة. ومن خلال التكنولوجيا والتعاون والتصنيع المسؤول والابتكار المستمر، تعمل إنتل من أجل مستقبل أنظف.',
+      'Explore Intel Sustainability': 'استكشف استدامة إنتل', 'STAY INFORMED': 'ابقَ على اطلاع', 'Join the sustainability newsletter': 'اشترك في النشرة الإخبارية للاستدامة',
+      "Get the latest updates on technology, climate action, and Intel's progress toward a more sustainable future.": 'احصل على أحدث المستجدات حول التقنية والعمل المناخي وتقدم إنتل نحو مستقبل أكثر استدامة.',
+      'Connected sustainable future ready': 'نحو مستقبل مستدام ومتصل', 'Connected Sustainable Future Ready': 'نحو مستقبل مستدام ومتصل', 'Email address': 'عنوان البريد الإلكتروني', 'Enter your email address': 'أدخل عنوان بريدك الإلكتروني',
+      'Subscribe': 'اشترك', 'Technology for a more sustainable world.': 'تقنية من أجل عالم أكثر استدامة.', 'About Intel': 'عن إنتل', '© 2026 Intel Corporation': '© 2026 شركة إنتل', 'Student educational project': 'مشروع تعليمي للطلاب'
+    };
+    let isRtl = false;
+    const originalTextNodes = new WeakMap();
+
+    function translatePage(language) {
+      const shouldTranslate = language === 'ar';
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      const textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+      textNodes.forEach((node) => {
+        const originalText = node.nodeValue;
+        if (!originalTextNodes.has(node)) originalTextNodes.set(node, originalText);
+        const sourceText = originalTextNodes.get(node);
+        const key = sourceText.trim().replace(/\s+/g, ' ');
+        if (!key) return;
+        const translatedText = translations[key];
+        const leadingWhitespace = sourceText.match(/^\s*/)[0];
+        const trailingWhitespace = sourceText.match(/\s*$/)[0];
+        node.nodeValue = shouldTranslate && translatedText
+          ? `${leadingWhitespace}${translatedText}${trailingWhitespace}`
+          : sourceText;
+      });
+
+      document.querySelectorAll('[alt], [aria-label], [placeholder]').forEach((element) => {
+        ['alt', 'aria-label', 'placeholder'].forEach((attribute) => {
+          if (!element.hasAttribute(attribute)) return;
+          const originalValue = `original${attribute.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())}`;
+          if (!element.dataset[originalValue]) element.dataset[originalValue] = element.getAttribute(attribute);
+          const value = element.dataset[originalValue];
+          element.setAttribute(attribute, shouldTranslate ? (translations[value] || value) : value);
+        });
+      });
+    }
+
+    function browserPrefersRtl() {
+      const preferredLanguages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language];
+      const language = preferredLanguages.find(Boolean) || html.lang || 'en';
+      const languageCode = language.toLowerCase().split('-')[0];
+
+      return rtlLanguageCodes.has(languageCode);
+    }
+
+    function applyRtl(state) {
+      isRtl = state;
+      translatePage(state ? 'ar' : 'en');
+      if (state) {
+        document.documentElement.setAttribute('dir', 'rtl');
+        document.documentElement.setAttribute('lang', 'ar');
+        document.documentElement.classList.add('rtl');
+        document.body.classList.add('rtl');
+        document.title = translations['Intel Sustainability Timeline'];
+        toggleButton.setAttribute('aria-pressed', 'true');
+        toggleButton.textContent = translations['RTL: On'];
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.documentElement.setAttribute('lang', 'en');
+        document.documentElement.classList.remove('rtl');
+        document.body.classList.remove('rtl');
+        document.title = 'Intel Sustainability Timeline';
+        toggleButton.setAttribute('aria-pressed', 'false');
+        toggleButton.textContent = 'RTL: Off';
+      }
+    }
+
+    toggleButton.addEventListener('click', () => {
+      applyRtl(!isRtl);
+    });
+
+    applyRtl(browserPrefersRtl());
+  </script>
 </body>
 </html>
